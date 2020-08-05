@@ -1,5 +1,6 @@
 const mongoose = require ('mongoose')
 
+
 const userSchema = mongoose.Schema(
     {
         name: {
@@ -31,6 +32,15 @@ const userSchema = mongoose.Schema(
             type: Number
         },
 
+
+    }
+    ,
+    {
+    writeConcern: {
+        w: 'majority',
+        j: true,
+        wtimeout: 1000
+      }
     }
 )
 
